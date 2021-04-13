@@ -21,4 +21,10 @@ export class AddPostService {
       'http://localhost:8080/api/posts/all'
     );
   }
+
+  getPost(permaLink: Number): Observable<PostPayload> {
+    return this.httpClient.get<PostPayload>(
+      'http://localhost:8080/api/posts/get/' + permaLink
+    );
+  }
 }

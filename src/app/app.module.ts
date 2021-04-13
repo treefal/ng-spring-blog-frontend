@@ -17,6 +17,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { AuthService } from './auth/auth.service';
 import { AddPostService } from './add-post.service';
 import { HttpClientInterceptor } from './http-client-interceptor';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HttpClientInterceptor } from './http-client-interceptor';
     RegisterSuccessComponent,
     HomeComponent,
     AddPostComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,7 @@ import { HttpClientInterceptor } from './http-client-interceptor';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'post/:id', component: PostComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register-success', component: RegisterSuccessComponent },
       { path: 'home', component: HomeComponent },

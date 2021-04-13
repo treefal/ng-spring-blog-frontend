@@ -18,6 +18,7 @@ import { AuthService } from './auth/auth.service';
 import { AddPostService } from './add-post.service';
 import { HttpClientInterceptor } from './http-client-interceptor';
 import { PostComponent } from './post/post.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,11 @@ import { PostComponent } from './post/post.component';
       { path: 'login', component: LoginComponent },
       { path: 'register-success', component: RegisterSuccessComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'add-post', component: AddPostComponent },
+      {
+        path: 'add-post',
+        component: AddPostComponent,
+        canActivate: [AuthGuard],
+      },
     ]),
     HttpClientModule,
     EditorModule,

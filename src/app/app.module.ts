@@ -35,6 +35,7 @@ import { HttpClientInterceptor } from './http-client-interceptor';
     ReactiveFormsModule,
     NgxWebstorageModule.forRoot(),
     RouterModule.forRoot([
+      { path: '', component: HomeComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register-success', component: RegisterSuccessComponent },
